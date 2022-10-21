@@ -1,0 +1,12 @@
+project_name: Plywood Gallery - 2D Array
+repository_url: https://github.com/kolibril13/plywood-gallery-2D-array
+user_content_version: 1.22.3 (Numpy)
+description: |
+  Cheat sheet gallery for 2D array
+favicon: icon.png
+preview_image: https://kolibril13.github.io/plywood-gallery-2D-array/preview_image.png
+gallery_parameters_path: gallery_assets_3_2DArray/gallery_parameters.json
+
+
+
+
