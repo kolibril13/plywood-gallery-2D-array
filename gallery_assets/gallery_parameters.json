@@ -8,55 +8,55 @@
         "image_path": "gallery_assets/2D_Array_001_Header1.png",
         "celltype": "Header",
         "css": "border: 3px solid #ED6A5A;height: 150px; width: auto;",
-        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\n\ndef disp(x, sep=\".0f\", annot=False, figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False);"
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\n\n\ndef disp(x, sep=\".0f\", annot=False, figsize=(5, 5)):\n    plt.figure(figsize=figsize)\n    plt.axis(\"off\")\n    sns.heatmap(x, annot=annot, fmt=sep, cmap=\"YlGnBu\", cbar=False);\n\n\n\n\n\n        "
       },
       {
-        "image_path": "gallery_assets/2D_Array_002_Checkboard.png",
+        "image_path": "gallery_assets/2D_Array_002_Full.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "pixX = 15\npixY = 15\narray = [[(i + j) % 2 for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
+        "code": "# Full\narray = np.full((10, 10), 10)\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_003_Full.png",
+        "image_path": "gallery_assets/2D_Array_003_Checkboard.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "array = np.full((10, 10), 10)\ndisp(array)"
+        "code": "# Chess\narray = np.fromfunction(lambda i, j: (i + j) % 2, (15, 15))\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_004_LinearDiagonal.png",
+        "image_path": "gallery_assets/2D_Array_004_Random.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# Linear diagonal\narray = [[i + j for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
+        "code": "# Random\nnp.random.seed(42)\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_005_LinearDiagonalNumpy.png",
+        "image_path": "gallery_assets/2D_Array_005_Sinus.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# alternative with numpy\narray = np.fromfunction(lambda i, j: i + j, shape=(15, 15))\ndisp(array)"
+        "code": "# Sinus\narray = np.fromfunction(lambda i, j: np.sin(j), (15, 15))\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_006_axis1Gradient.png",
+        "image_path": "gallery_assets/2D_Array_006_LinearDiagonalNumpy.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# Linear in axis1 direction\narray = [[i for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
+        "code": "# Gradient\narray = np.fromfunction(lambda i, j: i + j, shape=(15, 15))\ndisp(array)"
       },
       {
         "image_path": "gallery_assets/2D_Array_007_CountingUp.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# Linear counter hori\narray = [[i * pixY + j for i in range(pixX)] for j in range(pixY)]\ndisp(array)"
+        "code": "# Linear1\narray = np.fromfunction(lambda i, j: j , shape=(15, 15))\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_008_Random.png",
+        "image_path": "gallery_assets/2D_Array_008_axis1Gradient.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# Random\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)"
+        "code": "# Linear2\narray = np.fromfunction(lambda i, j: i , shape=(15, 15))\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_009_Sinus.png",
+        "image_path": "gallery_assets/2D_Array_009_Gradient.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# sinudial fromfunction\narray = np.fromfunction(lambda i, j: np.sin(j), (15, 15))\ndisp(array, sep=\".1f\")"
+        "code": "x = np.linspace(0, 15, 15)\ny = np.linspace(0, 15, 15)\nxx, yy = np.meshgrid(x, y, sparse=False)\narray = xx + yy\ndisp(array)"
       },
       {
         "image_path": "gallery_assets/2D_Array_010_MeshGrid.png",
@@ -71,16 +71,16 @@
         "code": "x = np.linspace(0, 15, 15)\ny = np.linspace(0, 15, 15)\nxx, yy = np.meshgrid(x, y, sparse=False)\ndisp(yy)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_012_Gradient.png",
+        "image_path": "gallery_assets/2D_Array_012_GradientShift.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "x = np.linspace(0, 15, 15)\ny = np.linspace(0, 15, 15)\nxx, yy = np.meshgrid(x, y, sparse=False)\narray = xx + yy\ndisp(array)"
+        "code": "pixX = 15; pixY =15\nx = np.arange(-pixX // 2, pixX // 2)\ny = np.arange(-pixY // 2, pixY // 2)\nxx, yy = np.meshgrid(x, y, sparse=False)\narray = xx + yy\narray[array <= 0] = 0\ndisp(array)"
       },
       {
         "image_path": "gallery_assets/2D_Array_013_GradientShift.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "x = np.arange(-pixX // 2, pixX // 2)\ny = np.arange(-pixY // 2, pixY // 2)\nxx, yy = np.meshgrid(x, y, sparse=False)\narray = xx + yy\narray[array <= 0] = 0\ndisp(array)"
+        "code": "pixX = 15; pixY =15\nx = np.arange(-pixX // 2, pixX // 2)\ny = np.arange(-pixY // 2, pixY // 2)\nxx, yy = np.meshgrid(x, y, sparse=False)\narray = xx + yy\narray[array >= 0] = 0\ndisp(array)"
       },
       {
         "image_path": "gallery_assets/2D_Array_014_LinearIncreaseFromCenter.png",
