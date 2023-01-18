@@ -26,13 +26,13 @@
         "image_path": "gallery_assets/2D_Array_004_Random.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# Random\nnp.random.seed(42)\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)"
+        "code": "# Random\nnp.random.seed(41)\narray = np.random.randint(0, 10, size=(15, 15))\ndisp(array)"
       },
       {
-        "image_path": "gallery_assets/2D_Array_005_Sinus.png",
+        "image_path": "gallery_assets/2D_Array_005_Cosine.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;height: 150px; width: auto;",
-        "code": "# Sinus\narray = np.fromfunction(lambda i, j: np.sin(j), (15, 15))\ndisp(array)"
+        "code": "# Cosine\narray = np.fromfunction(lambda i, j: np.cos(j), (15, 15))\ndisp(array)"
       },
       {
         "image_path": "gallery_assets/2D_Array_006_LinearDiagonalNumpy.png",
